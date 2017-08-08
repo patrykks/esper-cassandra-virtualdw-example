@@ -13,7 +13,7 @@ All of these tools are publicly available. However, it couldn't be found an exam
 
 ## Getting Started
 1. Download [Cassandra Docker image](https://hub.docker.com/_/cassandra/) using command ```docker pull cassandra:3.11 ``` (image size: 386MB)
-2. Download repository with example code using ```git pull ... ```
+2. Download repository with example code using ```git clone https://github.com/patrykks/esper-cassandra-virtualdw-example.git ```
 3. In the next step the esper-cassandra library preparing  will be needed. There is a problem because this library uses class ```com.datastax.driver.core.Session``` (Java Driver For Cassandra) in old version. The API of this class have changed, so this code will not compile with newest version of ```cassandra-driver-core```tIn order to use it, this problem must be solved. In this moment three ideas come to my mind to solve this problem.
     1. Implementation of custom library supporting same type of functionality as [esper-cassandra](https://bitbucket.org/scharrenbach/cassandra-esper/wiki/Home)
     2. Source code of [esper-cassandra library](https://bitbucket.org/scharrenbach/cassandra-esper/wiki/Home) is not available, but updating depracated API is not a difficult problem. Maybe it is worth trying to ask the authors of this library to update code and to publish new version to Maven central repository.
