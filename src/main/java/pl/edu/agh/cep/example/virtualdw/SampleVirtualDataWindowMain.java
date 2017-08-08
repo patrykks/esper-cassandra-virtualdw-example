@@ -15,7 +15,7 @@ import java.util.stream.IntStream;
 
 public class SampleVirtualDataWindowMain {
     private static final Logger log = LoggerFactory.getLogger(SampleVirtualDataWindowMain.class);
-    private Random random;
+    private Random random = new Random();
 
     public static void main(String[] args) {
         SampleVirtualDataWindowMain sample = new SampleVirtualDataWindowMain();
