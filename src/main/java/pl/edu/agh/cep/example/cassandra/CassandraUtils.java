@@ -4,6 +4,7 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.edu.agh.cep.example.config.PropertyHandler;
 
 public class CassandraUtils {
     private static final Logger LOG = LoggerFactory.getLogger(CassandraUtils.class);
@@ -11,7 +12,8 @@ public class CassandraUtils {
 
     public static Session initializeSession() {
         CassandraConnector connector = new CassandraConnector();
-        connector.connect("172.17.0.2", null);
+        String cassandraHost = PropertyHandler.getInstance().getValue("CASSANDRA_HOST").replace("\"", "");
+        connector.connect(cassandraHost, null);
         return connector.getSession();
     }
 
